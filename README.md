@@ -41,6 +41,17 @@ var tokenCallback = function(response) {
 MonetaryHostedWebToken.requestToken('[Public Key Goes Here]', 'monetary-token-iframe', tokenCallback);
 ```
 
+##### Optional: Provide `requestToken` with a string of your custom CSS to style the iframe contents:
+
+```javascript
+var customCSS = ".card-data-submit { background-color: #ADD8E6; color: white; }";
+MonetaryHostedWebToken.requestToken('[Public Key Goes Here]', 'monetary-token-iframe', tokenCallback, customCSS);
+```
+
+The layout of the iframe contents and their classes can be found here: https://token.monetary.co/v1/view/i
+
+_Note_: When custom CSS is provided, Monetary's default styling is entirely cleared.
+
 ##### The response object received by your callback method looks like this:
 ###### On Success
 ```javascript
