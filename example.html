@@ -1,0 +1,49 @@
+<!-- Monetary WebToken Example Payment Form -->
+<html>
+<head>
+  <title>Monetary Hosted WebToken Demo</title>
+  <link rel="stylesheet" href="stylesheets/example.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <script src="http://localhost:7383/v1/client/hosted"></script>
+  <script>
+    // Tokenization Callback
+    var tokenCallback = function(response) {
+      if (response.Error) {
+        // Handle tokenization errors
+        var error = response.Error;
+        window.alert("Tokenization error: " + error);
+      }
+      else {
+        var token = response.Token;
+        // Add token to payment form control
+        window.alert("Token received: " + token);
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container container-table">
+      <div class="row vertical-center-row">
+          <div class="col-xs-10 col-md-5 col-md-offset-4">
+              <div class="panel panel-default credit-card-box">
+                  <div class="panel-heading display-table">
+                      <div class="row display-tr">
+                          <h3 class="panel-title display-td">Payment Details</h3>
+                          <div class="display-td">
+                              <img class="img-responsive pull-right" src="accepted.png">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                      <iframe id="monetary-token-frame" width="100%" height="260" frameBorder="0"></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <script>
+  MonetaryHostedWebToken.requestToken("local_public00000000000000000000000000000003", "monetary-token-frame", tokenCallback);
+  </script>
+</body>
+</html>
