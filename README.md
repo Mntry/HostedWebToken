@@ -44,7 +44,7 @@ MonetaryHostedWebToken.init('[Public Key Goes Here]', 'monetary-token-iframe', t
 ##### Optional: Provide `init` with a string of your custom CSS to style the iframe contents:
 
 ```javascript
-var customCSS = ".card-data-submit { background-color: #ADD8E6; color: white; }";
+var customCSS = ".card-data { background-color: #ADD8E6; color: white; }";
 MonetaryHostedWebToken.init('[Public Key Goes Here]', 'monetary-token-iframe', tokenCallback, customCSS);
 ```
 
