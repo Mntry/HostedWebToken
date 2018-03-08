@@ -10,20 +10,28 @@ MonetaryHostedWebToken.init('[Public Key Goes Here]', 'monetary-token-iframe', t
 ```
 
 ### Stylable objects in Hosted WebToken
-#### Div class hierarchy:
-* `container`
-  * `row` `row-card-data-number`
-    * `left-col`
-    * `right-col`
-  * `row` `row-card-data-exp-month`
-    * `left-col`
-    * `right-col`
-  * `row` `row-card-data-exp-year`
-    * `left-col`
-    * `right-col`
-  * `row` `row-card-data-cvv`
-    * `left-col`
-    * `right-col`
+#### HTML components CSS class hierarchy:
+* `<div class="container">`
+  * `<div class="row row-card-data-number">`
+    * `<div class="left-col">`
+      * `<label class="card-data-number-label">`
+    * `<div class="right-col">`
+      * `<input class="card-data card-data-number" placeholder="Card Number" />`
+    * `<div class="row row-card-data-exp-month">`
+      * `<div class="left-col">`
+        * `<label class="card-data-exp-month-label">`
+      * `<div class="right-col">`
+        * `<select class="card-data card-data-exp-month">`
+    * `<div class="row row-card-data-exp-year">`
+      * `<div class="left-col">`
+        * `<label class="card-data-exp-year-label">`
+      * `<div class="right-col">`
+        * `<select class="card-data card-data-exp-year">`
+    * `<div class="row row-card-data-cvv">`
+      * `<div class="left-col">`
+        * `<label class="card-data-cvv-label">`
+      * `<div class="right-col">`
+        * `<input class="card-data card-data-cvv" />`
 
 ### Default styling and CSS errors
 * If the `css` parameter is not provided, a simplistic default styling is applied to the page.
