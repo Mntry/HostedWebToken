@@ -68,7 +68,7 @@
 }</pre></div>
 
 <h3>
-<a id="request-a-token" class="anchor" href="#request-a-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialize the hosted iframe</h3>
+<a id="initialize-the-hosted-iframe" class="anchor" href="#request-a-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialize the hosted iframe</h3>
 
 <h5>
 <a id="call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method" class="anchor" href="#call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Call <code>init</code> with your public key, payment form ID, and token callback method:</h5>
@@ -86,9 +86,13 @@
 
 <p><i>Note</i>: When custom CSS is provided, Monetary's default styling is entirely cleared.</p>
 
+<h3>
+<a id="request-a-token" class="anchor" href="#request-a-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Request a token!</h3>
+
+<h5>
 <a id="call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method" class="anchor" href="#call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Call <code>requestToken</code> from your page to trigger tokenization:</h5>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-smi">MonetaryHostedWebToken</span>.<span class="pl-en">init</span>(<span class="pl-s"><span class="pl-pds">"</span>[Public Key Goes Here]<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>monetary-token-iframe<span class="pl-pds">"</span></span>, tokenCallback);</pre></div>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>button<span class="pl-pds">"</span> <span class="pl-e">onclick</span>=<span class="pl-s"><span class="pl-pds">"</span>MonetaryHostedWebToken.requestToken()<span class="pl-pds">"</span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Submit<span class="pl-pds">"</span> /></span></pre></div>
 
 <h5>
 <a id="the-response-object-received-by-your-callback-method-looks-like-this" class="anchor" href="#the-response-object-received-by-your-callback-method-looks-like-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The response object received by your callback method looks like this:</h5>
