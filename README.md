@@ -8,9 +8,9 @@
 
 ### Define the required iframe control
 
-##### Give your payment iframe an ID:
+##### Create an iframe and give it an ID:
 ```html
-<iframe id="monetary-token-iframe"></iframe>
+<iframe id="monetary-token-iframe" frameborder="0"></iframe>
 ```
 
 ##### Define an input control to insert the token resulting into:
@@ -34,23 +34,30 @@ var tokenCallback = function(response) {
 }
 ```
 
-### Request a token!
-##### Call `requestToken` with your public authenticator, iframe control ID, and token callback method:
+### Initialize the hosted iframe
+##### Call `init` with your public authenticator, iframe control ID, and token callback method:
 
 ```javascript
-MonetaryHostedWebToken.requestToken('[Public Key Goes Here]', 'monetary-token-iframe', tokenCallback);
+MonetaryHostedWebToken.init('[Public Key Goes Here]', 'monetary-token-iframe', tokenCallback);
 ```
 
-##### Optional: Provide `requestToken` with a string of your custom CSS to style the iframe contents:
+##### Optional: Provide `init` with a string of your custom CSS to style the iframe contents:
 
 ```javascript
 var customCSS = ".card-data-submit { background-color: #ADD8E6; color: white; }";
-MonetaryHostedWebToken.requestToken('[Public Key Goes Here]', 'monetary-token-iframe', tokenCallback, customCSS);
+MonetaryHostedWebToken.init('[Public Key Goes Here]', 'monetary-token-iframe', tokenCallback, customCSS);
 ```
 
 The layout of the iframe contents and their classes can be found here: https://token.monetary.co/v1/view/i
 
 _Note_: When custom CSS is provided, Monetary's default styling is entirely cleared.
+
+### Request a token!
+##### Call `requestToken` from your page to trigger tokenization:
+
+```html
+<input type="button" onclick="MonetaryHostedWebToken.requestToken()" value="Submit" />
+```
 
 ##### The response object received by your callback method looks like this:
 ###### On Success
