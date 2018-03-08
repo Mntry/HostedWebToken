@@ -40,9 +40,9 @@
 <a id="define-the-required-form-and-controls" class="anchor" href="#define-the-required-form-and-controls" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Define the required iframe control</h3>
 
 <h5>
-<a id="give-your-payment-form-a-name" class="anchor" href="#give-your-payment-form-a-name" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Give your payment iframe an ID:</h5>
+<a id="give-your-payment-form-a-name" class="anchor" href="#give-your-payment-form-a-name" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create an iframe and give it an ID:</h5>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">iframe</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>monetary-token-iframe<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">iframe</span>&gt;</pre></div>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">iframe</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>monetary-token-iframe<span class="pl-pds">"</span> <span class="pl-e">frameborder</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">iframe</span>&gt;</pre></div>
 
 <h5>
 <a id="define-an-input-control-to-insert-the-token-into" class="anchor" href="#define-an-input-control-to-insert-the-token-into" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Define an input control to insert the token into:</h5>
@@ -68,23 +68,27 @@
 }</pre></div>
 
 <h3>
-<a id="request-a-token" class="anchor" href="#request-a-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Request a token!</h3>
+<a id="request-a-token" class="anchor" href="#request-a-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialize the hosted iframe</h3>
 
 <h5>
-<a id="call-requesttoken-with-your-public-authenticator-payment-form-name-and-token-callback-method" class="anchor" href="#call-requesttoken-with-your-public-authenticator-payment-form-name-and-token-callback-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Call <code>requestToken</code> with your public key, payment form ID, and token callback method:</h5>
+<a id="call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method" class="anchor" href="#call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Call <code>init</code> with your public key, payment form ID, and token callback method:</h5>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-smi">MonetaryHostedWebToken</span>.<span class="pl-en">requestToken</span>(<span class="pl-s"><span class="pl-pds">"</span>[Public Key Goes Here]<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>monetary-token-iframe<span class="pl-pds">"</span></span>, tokenCallback);</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">MonetaryHostedWebToken</span>.<span class="pl-en">init</span>(<span class="pl-s"><span class="pl-pds">"</span>[Public Key Goes Here]<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>monetary-token-iframe<span class="pl-pds">"</span></span>, tokenCallback);</pre></div>
 <h5>
-<a id="call-requesttoken-with-your-public-authenticator-payment-form-name-and-token-callback-method-css" class="anchor" href="#call-requesttoken-with-your-public-authenticator-payment-form-name-and-token-callback-method-css" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optional: Provide <code>requestToken</code> with a string of your custom CSS to style the iframe contents:</h5>
+<a id="call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method-css" class="anchor" href="#call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method-css" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optional: Provide <code>init</code> with a string of your custom CSS to style the iframe contents:</h5>
 
 <div class="highlight highlight-source-js"><pre>
 <span class="pl-k">var</span> customCSS <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>.card-data-submit { background-color: #ADD8E6; color: white; }<span class="pl-pds">";</span></span>
-<span class="pl-smi">MonetaryHostedWebToken</span>.<span class="pl-en">requestToken</span>(<span class="pl-s"><span class="pl-pds">"</span>[Public Key Goes Here]<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>monetary-token-iframe<span class="pl-pds">"</span></span>, tokenCallback, customCSS);
+<span class="pl-smi">MonetaryHostedWebToken</span>.<span class="pl-en">init</span>(<span class="pl-s"><span class="pl-pds">"</span>[Public Key Goes Here]<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>monetary-token-iframe<span class="pl-pds">"</span></span>, tokenCallback, customCSS);
 </pre></div>
 
 <p>The layout of the iframe contents and their classes can be found here: <a href="https://token.monetary.co/v1/view/i">https://token.monetary.co/v1/view/i</a></p>
 
 <p><i>Note</i>: When custom CSS is provided, Monetary's default styling is entirely cleared.</p>
+
+<a id="call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method" class="anchor" href="#call-init-with-your-public-authenticator-payment-form-name-and-token-callback-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Call <code>requestToken</code> from your page to trigger tokenization:</h5>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">MonetaryHostedWebToken</span>.<span class="pl-en">init</span>(<span class="pl-s"><span class="pl-pds">"</span>[Public Key Goes Here]<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>monetary-token-iframe<span class="pl-pds">"</span></span>, tokenCallback);</pre></div>
 
 <h5>
 <a id="the-response-object-received-by-your-callback-method-looks-like-this" class="anchor" href="#the-response-object-received-by-your-callback-method-looks-like-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The response object received by your callback method looks like this:</h5>
