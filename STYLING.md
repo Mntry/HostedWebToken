@@ -26,8 +26,8 @@ MonetaryHostedWebToken.init('[Public Key Goes Here]', 'monetary-token-iframe', t
     * `right-col`
 
 ### Default styling and CSS errors
-* If the `css` parameter is not provided a simplistic default styling is applied to the page.
+* If the `css` parameter is not provided, a simplistic default styling is applied to the page.
 * If any error occurs parsing the provided CSS, all styling will be stripped.
 * Invalid selectors, properties, or values in the provided CSS will be ignored.
-* When a `css` parameter is provided, default styling is not applied.
+* When any `css` parameter is provided, default styling is not applied.
 * All remote resources referenced in provided CSS will be ignored.
