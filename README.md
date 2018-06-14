@@ -71,6 +71,13 @@ _Note_: When custom CSS is provided, Monetary's default styling is entirely clea
 }
 ```
 
+###### On Field Validation Failure
+```javascript
+{
+  Error: "Invalid Card Number"
+}
+```
+
 ###### On Failure
 ```javascript
 {
